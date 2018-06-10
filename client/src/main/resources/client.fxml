@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171"
+      fx:controller="nl.oscar.dpi.donutrater.client.javafx.MainController">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" scaleShape="false"
+                    VBox.vgrow="ALWAYS">
+            <children>
+                <Label layoutX="278.0" layoutY="10.0" text="Donuts:"/>
+                <Separator layoutX="262.0" layoutY="8.0" orientation="VERTICAL" prefHeight="384.0" prefWidth="12.0"/>
+                <Button fx:id="btnSubmitDonut" layoutX="182.0" layoutY="216.0" mnemonicParsing="false" text="Submit"/>
+                <TextField fx:id="txtDonutName" layoutX="20.0" layoutY="57.0" prefHeight="26.0" prefWidth="230.0"/>
+                <Label layoutX="21.0" layoutY="10.0" text="Add Donut:"/>
+                <Separator layoutX="14.0" layoutY="30.0" prefHeight="0.0" prefWidth="239.0"/>
+                <Separator layoutX="278.0" layoutY="30.0" prefHeight="3.0" prefWidth="346.0"/>
+                <TextArea fx:id="txtDonutDescription" layoutX="20.0" layoutY="111.0" prefHeight="89.0" prefWidth="230.0"
+                          wrapText="true"/>
+                <Label layoutX="21.0" layoutY="39.0" text="Name:"/>
+                <Label layoutX="21.0" layoutY="91.0" text="Description:"/>
+                <Button fx:id="btnLikeDonut" layoutX="278.0" layoutY="354.0" mnemonicParsing="false" text="Like"/>
+                <Button fx:id="btnDislikeDonut" layoutX="335.0" layoutY="354.0" mnemonicParsing="false" text="Dislike"/>
+                <TableView fx:id="tblDonut" layoutX="274.0" layoutY="39.0" prefHeight="304.0" prefWidth="353.0">
+                    <columns>
+                        <TableColumn fx:id="colName" prefWidth="92.0" text="Name"/>
+                        <TableColumn fx:id="colLikes" prefWidth="82.0" text="Likes"/>
+                        <TableColumn fx:id="colDescription" prefWidth="178.0" text="Description"/>
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

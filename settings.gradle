@@ -1,0 +1,6 @@
+rootProject.name = 'donutrater'
+
+include (':library')
+include (':hiscore')
+include (':gateway')
+include (':client')
