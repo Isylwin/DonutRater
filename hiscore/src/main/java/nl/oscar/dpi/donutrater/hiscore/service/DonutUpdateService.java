@@ -21,7 +21,7 @@ public class DonutUpdateService {
     }
 
     public void updateDonut(Donut donut) {
-        Destination destination = new ActiveMQTopic("update_donut");
+        Destination destination = new ActiveMQTopic("update_donut_gateway");
 
         template.convertAndSend(destination, donut);
     }

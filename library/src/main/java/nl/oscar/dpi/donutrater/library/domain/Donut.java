@@ -15,9 +15,6 @@ import java.util.Set;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Donut {
 
-    @Deprecated
-    private long id;
-
     @Id
     private String name;
     private String description;
@@ -82,6 +79,10 @@ public class Donut {
         }
 
         return !alreadyPresent;
+    }
+
+    public boolean deepEquals(Donut o) {
+        return this.equals(o) && description.equals(o.description) && likes.equals(o.likes) && dislikes.equals(o.dislikes);
     }
 
     @Override

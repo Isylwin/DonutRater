@@ -31,19 +31,19 @@ public class DonutJmsListener {
         this.reviewListener = reviewListener;
     }
 
-    @JmsListener(destination = "submit_new_donut")
+    @JmsListener(destination = "submit_hiscore_new_donut")
     public void addDonut(Donut donut) {
         if (donutRepository.existsById(donut.getName())) {
-            return;
+            service.updateDonut(donutRepository.findById(donut.getName()).orElseThrow(RuntimeException::new));
+        } else {
+            donutRepository.save(donut);
+
+            donutListener.onNewDonut(donut);
+            service.updateDonut(donut);
         }
-
-        donutRepository.save(donut);
-
-        donutListener.onNewDonut(donut);
-        service.updateDonut(donut);
     }
 
-    @JmsListener(destination = "submit_donut_review")
+    @JmsListener(destination = "submit_hiscore_donut_review")
     public void addReview(DonutReview review) {
         Donut donut = donutRepository.findById(review.getDonutId()).orElseThrow(RuntimeException::new);
 
